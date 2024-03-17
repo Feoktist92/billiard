@@ -11,7 +11,7 @@ interface Ball {
 }
 
 // Коэффициент отражения для расчета столкновений мячей
-const coefficientOfRestitution = 0.3;
+const coefficientOfRestitution = 0.4;
 
 const BilliardCanvas: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -179,7 +179,7 @@ const BilliardCanvas: React.FC = () => {
             const force = Math.sqrt(dx * dx + dy * dy);
             const direction = Math.atan2(dy, dx);
 
-            const maxSpeed = 10;
+            const maxSpeed = 8;
 
             activeBall.vx = Math.min(force, maxSpeed) * Math.cos(direction);
             activeBall.vy = Math.min(force, maxSpeed) * Math.sin(direction);
